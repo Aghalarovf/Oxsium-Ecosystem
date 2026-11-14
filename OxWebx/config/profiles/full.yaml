@@ -1,0 +1,27 @@
+scan:
+  module_workers: 3
+
+network:
+  timeout: 20
+  retries: 2
+
+dns:
+  timeout: 5
+  lifetime: 12
+
+modules:
+  whois_dns:
+    threads: 8
+    records:
+      categories: [core, security, service, legacy]
+      threads: 12
+    ttl_anomaly:
+      probes: 6
+      probe_delay: 2.0
+    dangling:
+      max_hosts: 120
+    cross_search:
+      sources: [hackertarget, ripestat]
+      max_ns: 5
+      max_ips: 4
+      max_related: 500

@@ -1,0 +1,29 @@
+<div class="page-hero">
+    <div>
+        <div class="section-title page-title">Hosts</div>
+        <div class="section-sub" id="hosts-table-sub">All scanned hosts and their open ports</div>
+    </div>
+    <div class="page-status"><span></span> HOST INVENTORY</div>
+</div>
+<div class="page-summary">
+    <div class="summary-card" style="--summary-color: var(--accent)">
+        <span>Visible hosts</span>
+        <strong id="hosts-count">0</strong>
+        <small>current filter scope</small>
+    </div>
+    <div class="summary-card" style="--summary-color: var(--green)">
+        <span>Open ports</span>
+        <strong id="hosts-ports">0</strong>
+        <small>current findings</small>
+    </div>
+</div>
+<div class="data-table-wrap inventory-card">
+    <div class="data-table-head">
+        <div class="data-col w120">Host</div>
+        <div class="data-col w90">OS</div>
+        <div class="data-col w70">Ports</div>
+        <div class="data-col w220">Roles</div>
+        <div class="data-col flex1">Open Ports</div>
+    </div>
+    <div class="data-table-body" id="hosts-table-body"></div>
+</div>

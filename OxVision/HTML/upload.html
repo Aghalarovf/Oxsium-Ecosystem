@@ -1,0 +1,30 @@
+<div class="page-hero">
+    <div>
+        <div class="section-title page-title">Upload Scan</div>
+        <div class="section-sub">Import one or many port-scan JSON files into the SQLite data store</div>
+    </div>
+    <div class="page-status"><span></span> INGEST PIPELINE</div>
+</div>
+<div class="upload-layout">
+<div class="connect-card upload-card">
+    <div class="upload-card-heading">
+        <div class="card-title">Import dataset</div>
+        <span class="upload-format">JSON / JSONL</span>
+    </div>
+    <div id="drop-zone" class="drop-zone">
+        <input type="file" id="file-input" accept=".json,.jsonl,application/json,application/jsonl" multiple hidden>
+        <div class="drop-zone-icon">↑</div>
+        <div class="drop-zone-text">Drag JSON or JSONL files here or click to browse</div>
+        <div class="drop-zone-hint">Domain info JSONL files are routed to Domain Info automatically</div>
+    </div>
+    <div id="upload-status" class="output-wrap">
+        <div class="output-placeholder">No files uploaded yet</div>
+    </div>
+</div>
+<div class="upload-info-card">
+    <div class="card-title">Import workflow</div>
+    <div class="upload-step"><b>01</b><span>Select one or many JSON scan files</span></div>
+    <div class="upload-step"><b>02</b><span>Validate hosts and scan metadata</span></div>
+    <div class="upload-step"><b>03</b><span>Persist and render from SQLite</span></div>
+</div>
+</div>

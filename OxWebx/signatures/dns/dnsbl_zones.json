@@ -1,0 +1,23 @@
+{
+  "zones": [
+    {"zone": "zen.spamhaus.org", "name": "Spamhaus ZEN", "type": "ip", "ipv6": true},
+    {"zone": "dbl.spamhaus.org", "name": "Spamhaus DBL", "type": "domain", "ipv6": false},
+    {"zone": "bl.spamcop.net", "name": "SpamCop", "type": "ip", "ipv6": false},
+    {"zone": "b.barracudacentral.org", "name": "Barracuda", "type": "ip", "ipv6": false},
+    {"zone": "psbl.surriel.com", "name": "PSBL", "type": "ip", "ipv6": false},
+    {"zone": "multi.surbl.org", "name": "SURBL Multi", "type": "domain", "ipv6": false},
+    {"zone": "multi.uribl.com", "name": "URIBL Multi", "type": "domain", "ipv6": false},
+    {"zone": "dnsbl-1.uceprotect.net", "name": "UCEPROTECT Level 1", "type": "ip", "ipv6": false},
+    {"zone": "dnsbl.dronebl.org", "name": "DroneBL", "type": "ip", "ipv6": false},
+    {"zone": "all.s5h.net", "name": "s5h.net", "type": "ip", "ipv6": false},
+    {"zone": "ix.dnsbl.manitu.net", "name": "manitu", "type": "ip", "ipv6": false},
+    {"zone": "db.wpbl.info", "name": "WPBL", "type": "ip", "ipv6": false}
+  ],
+  "listed_network": "127.0.0.0/8",
+  "error_network": "127.255.255.0/24",
+  "error_codes": {
+    "127.255.255.252": "typing error in DNSBL name",
+    "127.255.255.254": "query via public resolver blocked",
+    "127.255.255.255": "excessive query volume"
+  }
+}

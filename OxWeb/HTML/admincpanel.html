@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel - OxWeb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/topbar.css">
+<link rel="stylesheet" href="/css/buttons.css">
+<link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="topbar-logo">
+        <div class="logo-icon">OW</div>
+        <div class="logo-name">Ox<span class="logo-sub">Web</span></div>
+    </div>
+    <a href="/" class="btn-secondary admin-back-link">Back to Dashboard</a>
+</div>
+
+<div class="admin-wrap">
+    <div class="admin-header">
+        <div>
+            <div class="admin-kicker"><span></span> CONTROL CENTER</div>
+            <div class="admin-title">Admin Panel</div>
+            <div class="admin-subtitle">Manage accounts, access levels, and platform access</div>
+        </div>
+        <div class="admin-header-status">SECURE SESSION <span></span></div>
+    </div>
+
+    <div class="admin-metrics">
+        <div class="admin-metric" style="--admin-color: var(--accent)">
+            <span>Total accounts</span>
+            <strong id="admin-total-users">-</strong>
+            <small>registered users</small>
+        </div>
+        <div class="admin-metric" style="--admin-color: var(--green)">
+            <span>Active access</span>
+            <strong id="admin-active-users">-</strong>
+            <small>enabled accounts</small>
+        </div>
+        <div class="admin-metric" style="--admin-color: var(--blue)">
+            <span>Privileged</span>
+            <strong id="admin-privileged-users">-</strong>
+            <small>admin accounts</small>
+        </div>
+    </div>
+
+    <div class="admin-section-heading">
+        <div>
+            <div class="admin-section-title">Create account</div>
+            <div class="admin-section-subtitle">Add a new user to the platform</div>
+        </div>
+        <span class="admin-section-badge">ACCESS MANAGEMENT</span>
+    </div>
+    <form class="admin-form" id="create-user-form" autocomplete="off">
+        <div class="auth-field">
+            <label for="new-username">Username</label>
+            <input id="new-username" type="text" required minlength="3">
+        </div>
+        <div class="auth-field">
+            <label for="new-password">Password</label>
+            <input id="new-password" type="password" required minlength="8">
+        </div>
+        <div class="auth-field">
+            <label for="new-role">Role</label>
+            <select id="new-role">
+                <option value="viewer">Viewer</option>
+                <option value="analyst">Analyst</option>
+                <option value="operator">Operator</option>
+                <option value="manager">Manager</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="super_admin">Super Admin</option>
+            </select>
+        </div>
+        <div class="auth-field">
+            <label for="new-team">Team</label>
+            <input id="new-team" type="text" maxlength="80">
+        </div>
+        <button type="submit" class="btn-primary">Create User</button>
+    </form>
+    <div class="auth-error" id="admin-error"></div>
+
+    <div class="admin-section-heading admin-users-heading">
+        <div>
+            <div class="admin-section-title">User directory</div>
+            <div class="admin-section-subtitle">Review and manage account permissions</div>
+        </div>
+        <span class="admin-section-badge">LIVE DIRECTORY</span>
+    </div>
+    <div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Last Login</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="users-table-body"></tbody>
+    </table>
+    </div>
+    <div class="admin-note">Super admin accounts cannot demote, disable, or delete themselves from here.</div>
+</div>
+
+<script src="/js/state.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/admincpanel.js"></script>
+</body>
+</html>

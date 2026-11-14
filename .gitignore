@@ -1,0 +1,30 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# Python caches and local build output
+__pycache__/
+PyCache/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Runtime data and generated uploads
+uploads/
+upload/
+data/
+output/
+results/
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

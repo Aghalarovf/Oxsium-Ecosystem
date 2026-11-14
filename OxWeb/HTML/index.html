@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OxWeb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/sidebar.css">
+<link rel="stylesheet" href="/css/topbar.css">
+<link rel="stylesheet" href="/css/buttons.css">
+<link rel="stylesheet" href="/css/modals.css">
+<link rel="stylesheet" href="/css/auth.css">
+<link rel="stylesheet" href="/css/views.css">
+<link rel="stylesheet" href="/css/upload.css">
+<link rel="stylesheet" href="/css/whois-dns-information.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="topbar-logo">
+        <div class="logo-icon">OW</div>
+        <div class="logo-name">Ox<span class="logo-sub">Web</span></div>
+    </div>
+    <div class="conn-badge">
+        <div class="conn-dot" id="conn-dot"></div>
+        <div class="conn-label" id="conn-label">Connecting</div>
+    </div>
+</div>
+
+<div class="layout">
+    <div class="sidebar">
+        <div class="sidebar-section sidebar-upload">
+            <div class="sidebar-section-title sidebar-category-title">Upload</div>
+            <div class="nav-item" data-view="upload">Upload Results</div>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Navigation</div>
+            <div class="nav-item" data-view="dashboard">Dashboard</div>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Administration</div>
+            <a class="nav-item" id="nav-admin-panel" href="/admincpanel" hidden>Admin Panel</a>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Application Results</div>
+            <div class="nav-item" data-view="whois-dns-information">Whois/DNS Information</div>
+            <div class="nav-item" data-view="application-technologies">Application Technologies</div>
+            <div class="nav-item" data-view="subdomain-discovery">Subdomain Discovery</div>
+            <div class="nav-item" data-view="archive-dorks">Archive/Dorks</div>
+            <div class="nav-item" data-view="traffic-analyzer">Traffic Analyzer</div>
+            <div class="nav-item" data-view="sitemap-graph">Sitemap Graph</div>
+            <div class="nav-item" data-view="javascript-analysis">JavaScript Analysis</div>
+            <div class="nav-item" data-view="risk-assessment">Risk Assessment</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="application-result-root"></div>
+        <section class="view" id="view-dashboard">
+            <div class="section-title">Dashboard</div>
+            <div class="section-sub">Overview of the current engagement</div>
+            <div class="admin-metrics">
+                <div class="admin-metric" style="--admin-color: var(--accent)">
+                    <span>Targets</span>
+                    <strong id="metric-targets">-</strong>
+                    <small>registered targets</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="view" id="view-targets">
+            <div class="section-title">Targets</div>
+            <div class="section-sub">Web applications in scope</div>
+            <form class="admin-form view-form" id="target-form" autocomplete="off">
+                <div class="auth-field">
+                    <label for="target-url">URL</label>
+                    <input id="target-url" type="text" placeholder="https://example.com" required>
+                </div>
+                <div class="auth-field">
+                    <label for="target-name">Name</label>
+                    <input id="target-name" type="text" maxlength="80">
+                </div>
+                <button type="submit" class="btn-primary">Add Target</button>
+            </form>
+            <div class="auth-error" id="target-error"></div>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Name</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="targets-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="view" id="view-upload">
+            <div class="page-hero">
+                <div>
+                    <div class="section-title page-title">Upload Scan</div>
+                    <div class="section-sub">Import one or many port-scan JSON files into the SQLite data store</div>
+                </div>
+                <div class="page-status"><span></span> INGEST PIPELINE</div>
+            </div>
+            <div class="upload-layout">
+                <div class="connect-card upload-card">
+                    <div class="upload-card-heading">
+                        <div class="card-title">Import dataset</div>
+                        <span class="upload-format">JSON / JSONL</span>
+                    </div>
+                    <div class="drop-zone">
+                        <div class="drop-zone-icon">↑</div>
+                        <div class="drop-zone-text">Drag an OxWebx JSON report here or click to browse</div>
+                        <div class="drop-zone-hint">Whois/DNS reports are stored in web_results.db</div>
+                        <input id="whois-dns-upload-input" type="file" accept=".json,application/json" hidden>
+                    </div>
+                    <div class="output-wrap">
+                        <div class="output-placeholder">No files uploaded yet</div>
+                    </div>
+                </div>
+                <div class="upload-info-card">
+                    <div class="card-title">Import workflow</div>
+                    <div class="upload-step"><b>01</b><span>Select one or many JSON scan files</span></div>
+                    <div class="upload-step"><b>02</b><span>Validate hosts and scan metadata</span></div>
+                    <div class="upload-step"><b>03</b><span>Persist and render from SQLite</span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <aside class="right-panel" aria-label="Session panel">
+        <div class="panel-header">Session</div>
+    </aside>
+</div>
+
+<script src="/js/state.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/views.js"></script>
+<script src="/js/upload-results.js"></script>
+<script src="/js/nav.js"></script>
+</body>
+</html>

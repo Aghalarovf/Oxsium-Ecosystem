@@ -1,0 +1,22 @@
+{
+  "oversized_bytes": 512,
+  "ignore_prefixes": ["v=spf1", "v=dmarc1", "v=dkim1", "v=bimi1", "v=stsv1", "v=tlsrptv1"],
+  "secret_patterns": [
+    {"id": "aws_access_key", "pattern": "\\bAKIA[0-9A-Z]{16}\\b"},
+    {"id": "aws_session_key", "pattern": "\\bASIA[0-9A-Z]{16}\\b"},
+    {"id": "google_api_key", "pattern": "\\bAIza[0-9A-Za-z_-]{35}\\b"},
+    {"id": "slack_token", "pattern": "\\bxox[abprs]-[0-9A-Za-z-]{10,}"},
+    {"id": "github_token", "pattern": "\\bgh[pousr]_[0-9A-Za-z]{36,}\\b"},
+    {"id": "stripe_live_key", "pattern": "\\b[sr]k_live_[0-9A-Za-z]{16,}\\b"},
+    {"id": "private_key_block", "pattern": "-----BEGIN [A-Z ]*PRIVATE KEY-----"},
+    {"id": "jwt", "pattern": "\\beyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\b"},
+    {"id": "url_credentials", "pattern": "[a-z][a-z0-9+.-]*://[^\\s/:@]+:[^\\s/@]+@"},
+    {"id": "keyword_assignment", "pattern": "(?i)\\b(pass(word|wd)?|pwd|secret|api[_-]?key|access[_-]?key|auth[_-]?token|bearer)\\s*[=:]\\s*[^\\s;\"']{6,}"}
+  ],
+  "internal_patterns": [
+    {"id": "private_ipv4", "pattern": "\\b(10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|172\\.(1[6-9]|2\\d|3[01])\\.\\d{1,3}\\.\\d{1,3})\\b"},
+    {"id": "internal_domain", "pattern": "\\b[a-z0-9-]+(\\.[a-z0-9-]+)*\\.(internal|corp|local|lan|intra|priv|home|localdomain)\\b"},
+    {"id": "environment_host", "pattern": "\\b(dev|staging|stage|uat|qa|test|preprod|sandbox)[-.][a-z0-9-]+\\.[a-z]{2,}\\b"},
+    {"id": "internal_notice", "pattern": "(?i)\\b(internal use only|do not (delete|remove)|fixme|todo)\\b"}
+  ]
+}

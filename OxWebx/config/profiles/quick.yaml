@@ -1,0 +1,32 @@
+scan:
+  module_workers: 1
+
+network:
+  timeout: 8
+  retries: 0
+
+dns:
+  timeout: 3
+  lifetime: 6
+
+modules:
+  whois_dns:
+    checks:
+      - records
+      - whois
+      - email_security
+      - reverse_dns
+      - ip_intel
+    records:
+      categories: [core]
+      discover_services: false
+      legacy_probe: false
+      wildcard_probes: 0
+      ns_probe: false
+    email_security:
+      dkim_probe: false
+      mta_sts_fetch: false
+    ip_intel:
+      max_ips: 3
+    reverse_dns:
+      max_names: 4

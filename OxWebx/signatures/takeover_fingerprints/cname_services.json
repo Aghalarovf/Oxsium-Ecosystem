@@ -1,0 +1,36 @@
+{
+  "services": [
+    {"name": "AWS S3", "cname": ["s3.amazonaws.com", ".s3-website", ".s3."], "fingerprints": ["NoSuchBucket", "The specified bucket does not exist"], "confidence": "high"},
+    {"name": "Azure Web Apps", "cname": ["azurewebsites.net"], "fingerprints": ["404 Web Site not found"], "confidence": "high"},
+    {"name": "Azure CDN", "cname": ["azureedge.net"], "fingerprints": ["404 Web Site not found"], "confidence": "medium"},
+    {"name": "Azure Traffic Manager", "cname": ["trafficmanager.net"], "fingerprints": [], "confidence": "medium"},
+    {"name": "AWS CloudFront", "cname": ["cloudfront.net"], "fingerprints": ["The request could not be satisfied", "Bad request"], "confidence": "low"},
+    {"name": "AWS Elastic Beanstalk", "cname": ["elasticbeanstalk.com"], "fingerprints": [], "confidence": "medium"},
+    {"name": "GitHub Pages", "cname": ["github.io", "pages.github.com"], "fingerprints": ["There isn't a GitHub Pages site here"], "confidence": "high"},
+    {"name": "Heroku", "cname": ["herokuapp.com", "herokudns.com", "herokussl.com"], "fingerprints": ["No such app", "no-such-app"], "confidence": "high"},
+    {"name": "Netlify", "cname": ["netlify.app", "netlify.com"], "fingerprints": ["Not Found - Request ID"], "confidence": "low"},
+    {"name": "Vercel", "cname": ["vercel.app", "vercel-dns.com"], "fingerprints": ["The deployment could not be found"], "confidence": "low"},
+    {"name": "Firebase", "cname": ["firebaseapp.com"], "fingerprints": [], "confidence": "low"},
+    {"name": "Firebase Hosting", "cname": ["web.app"], "fingerprints": ["Site Not Found"], "confidence": "low"},
+    {"name": "Pantheon", "cname": ["pantheonsite.io"], "fingerprints": ["404 error unknown site!"], "confidence": "high"},
+    {"name": "Ghost", "cname": ["ghost.io"], "fingerprints": ["Site unavailable", "Failed to resolve DNS path for this host"], "confidence": "medium"},
+    {"name": "Freshdesk", "cname": ["freshdesk.com"], "fingerprints": ["May be this is still fresh"], "confidence": "medium"},
+    {"name": "Help Scout", "cname": ["helpscoutdocs.com"], "fingerprints": ["No settings were found for this company"], "confidence": "medium"},
+    {"name": "Zendesk", "cname": ["zendesk.com"], "fingerprints": ["Help Center Closed", "this help center no longer exists"], "confidence": "medium"},
+    {"name": "Shopify", "cname": ["myshopify.com"], "fingerprints": ["Sorry, this shop is currently unavailable", "Only one step left"], "confidence": "medium"},
+    {"name": "Tumblr", "cname": ["tumblr.com"], "fingerprints": ["Whatever you were looking for doesn't currently exist at this address"], "confidence": "high"},
+    {"name": "WP Engine", "cname": ["wpengine.com"], "fingerprints": ["The site you were looking for couldn't be found"], "confidence": "medium"},
+    {"name": "Fastly CDN", "cname": ["fastly.net"], "fingerprints": ["Fastly error: unknown domain"], "confidence": "high"},
+    {"name": "Squarespace", "cname": ["squarespace.com"], "fingerprints": ["Website Expired", "No Such Account"], "confidence": "low"},
+    {"name": "Surge.sh", "cname": ["surge.sh"], "fingerprints": ["project not found"], "confidence": "high"},
+    {"name": "Bitbucket", "cname": ["bitbucket.io"], "fingerprints": ["Repository not found"], "confidence": "high"},
+    {"name": "Read the Docs", "cname": ["readthedocs.io"], "fingerprints": ["unknown to Read the Docs"], "confidence": "medium"},
+    {"name": "Cargo", "cname": ["cargocollective.com"], "fingerprints": ["404 Not Found"], "confidence": "low"},
+    {"name": "Unbounce", "cname": ["unbouncepages.com"], "fingerprints": ["The requested URL was not found on this server"], "confidence": "low"}
+  ],
+  "common_labels": [
+    "www", "mail", "dev", "staging", "api", "blog", "cdn", "admin", "ftp", "smtp", "vpn",
+    "status", "docs", "help", "shop", "portal", "app", "test", "beta", "support",
+    "static", "assets", "media", "m", "git", "jira", "wiki", "login", "sso", "auth"
+  ]
+}

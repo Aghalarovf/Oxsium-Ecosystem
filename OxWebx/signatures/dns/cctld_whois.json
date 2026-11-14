@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "de": "whois.denic.de",
+    "uk": "whois.nic.uk",
+    "fr": "whois.nic.fr",
+    "nl": "whois.domain-registry.nl",
+    "ru": "whois.tcinet.ru",
+    "io": "whois.nic.io",
+    "eu": "whois.eu",
+    "ch": "whois.nic.ch",
+    "it": "whois.nic.it",
+    "pl": "whois.dns.pl"
+  },
+  "web_only": {
+    "az": "https://www.whois.az/"
+  }
+}

@@ -1,0 +1,41 @@
+<div class="av-wrap">
+    <div class="av-header">
+        <div class="av-header-left">
+            <div class="av-header-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6l8-3z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+            </div>
+            <div>
+                <div class="av-title">All Vulnerabilities</div>
+                <div class="av-subtitle">Aggregated findings across all hosts</div>
+            </div>
+        </div>
+        <div class="av-header-right">
+            <div class="av-search-wrap">
+                <svg class="av-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input id="av-search" class="av-search-input" type="search" placeholder="Search title, host, CVE…" autocomplete="off">
+            </div>
+            <select id="av-sev-filter" class="av-select">
+                <option value="">All severities</option>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                <option value="Info">Info</option>
+            </select>
+            <select id="av-status-filter" class="av-select">
+                <option value="">All statuses</option>
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Fixed">Fixed</option>
+                <option value="False Positive">False Positive</option>
+                <option value="Accepted Risk">Accepted Risk</option>
+            </select>
+            <button type="button" id="av-export" class="btn-secondary">Export</button>
+        </div>
+    </div>
+
+    <div id="av-overview" class="av-overview"></div>
+    <div id="av-table-wrap" class="av-table-wrap">
+        <div class="data-empty">Loading…</div>
+    </div>
+</div>

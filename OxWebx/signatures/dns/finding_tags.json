@@ -1,0 +1,271 @@
+{
+  "rules": {
+    "BLACKLIST-": [
+      "reputation"
+    ],
+    "CDN-": [
+      "infrastructure"
+    ],
+    "CDN-ORIGIN-EXPOSED": [
+      "exposure",
+      "infrastructure"
+    ],
+    "CROSS-SEARCH-": [
+      "exposure"
+    ],
+    "DANGLE-": [
+      "takeover"
+    ],
+    "DNS-ANY-DISCLOSURE": [
+      "exposure"
+    ],
+    "DNS-CAA-": [
+      "hygiene"
+    ],
+    "DNS-HINFO-": [
+      "exposure"
+    ],
+    "DNS-NAPTR-": [
+      "exposure"
+    ],
+    "DNS-NXDOMAIN": [
+      "availability"
+    ],
+    "DNS-RP-": [
+      "exposure"
+    ],
+    "DNS-SOA-": [
+      "hygiene"
+    ],
+    "DNS-SRV-": [
+      "exposure"
+    ],
+    "DNSSEC-": [
+      "hygiene"
+    ],
+    "DNSSEC-NSEC-ZONEWALK": [
+      "exposure"
+    ],
+    "EMAIL-": [
+      "email",
+      "hygiene"
+    ],
+    "HISTORY-": [
+      "history"
+    ],
+    "IP-MULTI-COUNTRY": [
+      "infrastructure"
+    ],
+    "IP-PROXY-FLAGGED": [
+      "reputation"
+    ],
+    "RDNS-": [
+      "hygiene"
+    ],
+    "RDNS-PRIVATE-IP": [
+      "exposure"
+    ],
+    "RDNS-PTR-LEAK": [
+      "exposure"
+    ],
+    "TTL-": [
+      "dns"
+    ],
+    "TTL-FASTFLUX-": [
+      "dns",
+      "reputation"
+    ],
+    "WAF-DETECTED": [
+      "infrastructure"
+    ],
+    "WHOIS-": [
+      "registration"
+    ],
+    "WHOIS-CONTACT-EXPOSED": [
+      "registration",
+      "exposure"
+    ],
+    "WHOIS-NO-TRANSFER-LOCK": [
+      "registration",
+      "hygiene"
+    ],
+    "ZONE-TRANSFER-": [
+      "exposure"
+    ],
+    "DNS-A-PRIVATE-IP": [
+      "exposure"
+    ],
+    "DNS-A-RESERVED-IP": [
+      "exposure",
+      "hygiene"
+    ],
+    "DNS-AAAA-MISSING": [
+      "infrastructure"
+    ],
+    "DNS-A-MULTI-PROVIDER": [
+      "infrastructure",
+      "exposure"
+    ],
+    "DNS-APEX-CNAME": [
+      "hygiene",
+      "availability"
+    ],
+    "DNS-CNAME-CHAIN-LONG": [
+      "hygiene"
+    ],
+    "DNS-NS-SINGLE": [
+      "availability"
+    ],
+    "DNS-NS-SAME-NETWORK": [
+      "availability",
+      "infrastructure"
+    ],
+    "DNS-NS-LAME": [
+      "availability",
+      "hygiene"
+    ],
+    "DNS-NS-INCONSISTENT-SOA": [
+      "availability",
+      "hygiene"
+    ],
+    "DNS-MX-NONE": [
+      "email"
+    ],
+    "DNS-MX-NULL": [
+      "email"
+    ],
+    "DNS-MX-IP-ADDRESS": [
+      "email",
+      "hygiene"
+    ],
+    "DNS-MX-SINGLE": [
+      "email",
+      "availability"
+    ],
+    "DNS-SOA-RNAME-EXPOSED": [
+      "exposure"
+    ],
+    "DNS-TXT-VENDOR-VERIFICATION": [
+      "exposure"
+    ],
+    "DNS-TXT-STALE-VERIFICATION": [
+      "hygiene",
+      "exposure"
+    ],
+    "DNS-TXT-SECRET-LIKE": [
+      "exposure",
+      "secrets"
+    ],
+    "DNS-TXT-INTERNAL-INFO": [
+      "exposure"
+    ],
+    "DNS-TXT-OVERSIZED": [
+      "hygiene",
+      "availability"
+    ],
+    "DNS-TXT-DUPLICATE": [
+      "hygiene"
+    ],
+    "DNS-SRV-LEGACY-COLLAB": [
+      "hygiene",
+      "exposure"
+    ],
+    "DNS-SRV-PLAINTEXT-SERVICE": [
+      "exposure",
+      "hygiene"
+    ],
+    "DNS-SRV-AUTODISCOVER-EXTERNAL": [
+      "exposure",
+      "email"
+    ],
+    "DNS-SRV-PORT-NONSTANDARD": [
+      "hygiene"
+    ],
+    "DNS-CAA-UNKNOWN-CA": [
+      "hygiene",
+      "exposure"
+    ],
+    "DNS-HTTPS-RR-ECH-MISSING": [
+      "hygiene"
+    ],
+    "DNS-SVCB-ALPN-LEGACY": [
+      "hygiene"
+    ],
+    "DNS-LEGACY-RECORD-PRESENT": [
+      "hygiene",
+      "exposure"
+    ],
+    "DNS-LOC-EXPOSED": [
+      "exposure"
+    ],
+    "DNS-WKS-EXPOSED": [
+      "exposure"
+    ],
+    "DNS-WILDCARD-A": [
+      "takeover",
+      "exposure"
+    ],
+    "DNS-WILDCARD-MX": [
+      "email",
+      "exposure"
+    ],
+    "DNS-ZONE-RECORD-COUNT-HIGH": [
+      "exposure"
+    ],
+    "WHOIS-REGISTRAR-UNTRUSTED": [
+      "registration",
+      "reputation"
+    ],
+    "WHOIS-NS-MISMATCH": [
+      "registration",
+      "takeover"
+    ],
+    "WHOIS-DNSSEC-DS-MISMATCH": [
+      "registration",
+      "hygiene"
+    ],
+    "WHOIS-RENEW-PROHIBITED": [
+      "registration",
+      "availability"
+    ],
+    "RDNS-GENERIC-ISP-NAME": [
+      "hygiene",
+      "infrastructure"
+    ],
+    "IP-ASN-HOSTING-CHEAP": [
+      "infrastructure",
+      "reputation"
+    ],
+    "IP-SHARED-HOSTING": [
+      "infrastructure",
+      "exposure"
+    ],
+    "TTL-NS-LOW": [
+      "dns",
+      "availability"
+    ],
+    "TTL-MX-LOW": [
+      "dns",
+      "email"
+    ],
+    "TTL-ASYMMETRIC": [
+      "dns"
+    ],
+    "HISTORY-ARCHIVE-GAP": [
+      "history",
+      "registration"
+    ],
+    "HISTORY-REGISTRAR-CHANGE": [
+      "history",
+      "registration"
+    ],
+    "HISTORY-OWNER-CHANGE": [
+      "history",
+      "registration"
+    ],
+    "HISTORY-NS-CHANGE-RECENT": [
+      "history",
+      "takeover"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "categories": {
+    "core": ["A", "AAAA", "MX", "NS", "TXT", "SOA", "CNAME", "SRV", "CAA"],
+    "security": ["DNSKEY", "DS", "RRSIG", "NSEC", "NSEC3", "NSEC3PARAM", "CDNSKEY", "CDS", "TLSA", "SSHFP", "SMIMEA", "OPENPGPKEY", "IPSECKEY"],
+    "service": ["HTTPS", "SVCB", "NAPTR", "URI", "LOC", "HINFO", "RP"],
+    "legacy": ["AFSDB", "CERT", "DNAME", "HIP", "KX", "DHCID", "CSYNC", "ZONEMD", "EUI48", "EUI64", "NID", "L32", "L64", "LP", "WKS", "X25", "ISDN", "RT", "NSAP", "APL", "GPOS", "A6"]
+  },
+  "srv_prefixes": [
+    "_sip._tcp",
+    "_sip._udp",
+    "_sip._tls",
+    "_sips._tcp",
+    "_xmpp-client._tcp",
+    "_xmpp-server._tcp",
+    "_caldav._tcp",
+    "_caldavs._tcp",
+    "_carddav._tcp",
+    "_carddavs._tcp",
+    "_ldap._tcp",
+    "_ldap._tcp.dc._msdcs",
+    "_kerberos._tcp",
+    "_kerberos._udp",
+    "_kpasswd._tcp",
+    "_gc._tcp",
+    "_http._tcp",
+    "_https._tcp",
+    "_autodiscover._tcp",
+    "_submission._tcp",
+    "_imap._tcp",
+    "_imaps._tcp",
+    "_pop3._tcp",
+    "_pop3s._tcp",
+    "_matrix._tcp",
+    "_matrix-fed._tcp"
+  ],
+  "directory_service_prefixes": ["_ldap._tcp", "_ldap._tcp.dc._msdcs", "_kerberos._tcp", "_kerberos._udp", "_kpasswd._tcp", "_gc._tcp"],
+  "tlsa_prefixes": [
+    {"prefix": "_443._tcp", "service": "HTTPS"},
+    {"prefix": "_80._tcp", "service": "HTTP"},
+    {"prefix": "_25._tcp", "service": "SMTP"},
+    {"prefix": "_587._tcp", "service": "SMTP submission"},
+    {"prefix": "_993._tcp", "service": "IMAPS"}
+  ],
+  "sshfp_algorithms": {"1": "RSA", "2": "DSA", "3": "ECDSA", "4": "Ed25519", "6": "Ed448"},
+  "sshfp_fingerprint_types": {"1": "SHA-1", "2": "SHA-256"},
+  "dnskey_algorithms": {
+    "1": {"name": "RSAMD5", "status": "deprecated"},
+    "3": {"name": "DSA", "status": "deprecated"},
+    "5": {"name": "RSASHA1", "status": "weak"},
+    "6": {"name": "DSA-NSEC3-SHA1", "status": "deprecated"},
+    "7": {"name": "RSASHA1-NSEC3-SHA1", "status": "weak"},
+    "8": {"name": "RSASHA256", "status": "ok"},
+    "10": {"name": "RSASHA512", "status": "ok"},
+    "12": {"name": "ECC-GOST", "status": "deprecated"},
+    "13": {"name": "ECDSAP256SHA256", "status": "ok"},
+    "14": {"name": "ECDSAP384SHA384", "status": "ok"},
+    "15": {"name": "ED25519", "status": "ok"},
+    "16": {"name": "ED448", "status": "ok"}
+  },
+  "ds_digest_types": {
+    "1": {"name": "SHA-1", "status": "weak"},
+    "2": {"name": "SHA-256", "status": "ok"},
+    "3": {"name": "GOST R 34.11-94", "status": "deprecated"},
+    "4": {"name": "SHA-384", "status": "ok"}
+  },
+  "ptr_leak_patterns": {
+    "environment": "\\b(prod|production|dev|stag|staging|test|uat|qa|preprod|sandbox)\\b",
+    "datacenter": "\\b(dc[0-9]+|ams|fra|lon|nyc|sfo|sin|tok|iad|ord|lax|dfw|bom|syd|gru)\\b",
+    "internal": "\\.(internal|corp|local|lan|intra|priv)$",
+    "sequential": "-0*[0-9]{1,3}(\\.|$)"
+  },
+  "voip_naptr_services": ["SIP+D2U", "SIP+D2T", "SIPS+D2T"]
+}

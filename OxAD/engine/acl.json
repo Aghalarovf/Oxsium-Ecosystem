@@ -1,0 +1,6 @@
+{
+  "GENERIC_ALL": "critical",
+  "WRITE_DACL": "high",
+  "WRITE_OWNER": "high",
+  "GENERIC_WRITE": "high"
+}

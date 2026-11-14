@@ -1,0 +1,107 @@
+Users
+distinguishedName → dn
+sAMAccountName → sam_account_name
+displayName → display_name
+description
+mail
+homeDirectory → home_directory
+scriptPath → script_path
+adminCount → admin_count (int)
+badPwdCount → bad_pwd_count (int)
+primaryGroupID → primary_group_id (int, yoxdursa None)
+msDS-SupportedEncryptionTypes → supported_encryption_types (int, yoxdursa None)
+userAccountControl → uac (int)
+servicePrincipalName → spns
+memberOf → member_of
+msDS-AllowedToDelegateTo → allowed_to_delegate_to
+objectSid (bayt) → sid, sid_bytes_to_str ilə S-1-5-... sətrinə çevrilir.
+sIDHistory (bayt siyahısı) → sid_history, hər element SID sətrinə çevrilir.
+pwdLastSet → pwd_last_set, ldap_timestamp_to_iso ilə ISO tarixə çevrilir.
+lastLogonTimestamp → last_logon, ldap_timestamp_to_iso ilə ISO tarixə çevrilir.
+accountExpires → account_expires, ldap_timestamp_to_iso ilə ISO tarixə çevrilir.
+lockoutTime 
+whenCreated
+whenChanged 
+enabled 
+rbcd_configured
+
+
+Groups:
+distinguishedName	        dn
+name	                    name
+sAMAccountName	            sam_account_name
+objectSid	                sid	
+(sid-dən)	                rid	
+member	                    members
+memberOf	                member_of	
+description	                description	
+groupType	                group_type	
+(groupType-dan)	            security_enabled	
+adminCount	                admin_count
+isCriticalSystemObject      is_critical_system_object	
+managedBy	                managed_by	
+whenCreated	                when_created	
+whenChanged	                when_changed	
+info	                    info	
+
+
+Computers:
+distinguishedName	                        dn
+name	                                    name
+sAMAccountName	                            sam_account_name	yazılmır
+objectSid	                                sid
+domainsid
+operatingSystem	                            operating_system
+is_workstation                              is_server
+operatingSystemVersion	                    operating_system_version
+dNSHostName	                                dns_hostname	          
+userAccountControl	                        uac	
+enabled	disabled 
+trusted_for_delegation	                    trusted_for_delegation
+servicePrincipalName	                    spns	
+lastLogonTimestamp	                        last_logon	
+pwdLastSet	                                pwd_last_set	
+description	                                description	
+primaryGroupID	                            primary_group_id	
+isCriticalSystemObject	                    is_critical_system_object	
+msDS-SupportedEncryptionTypes	            supported_encryption_types	
+whenCreated	when_created	                when_created
+whenChanged	when_changed	                when_changed
+msDS-AllowedToDelegateTo	                allowed_to_delegate_to	
+msDS-AllowedToActOnBehalfOfOtherIdentity	rbcd_configured
+
+
+GPOs:
+distinguishedName	        dn	
+displayName	                name	
+cn	                        guid	
+gPCFileSysPath	            file_system_path	
+flags	                    enabled, enforced	
+versionNumber	            version_number	
+gPCMachineExtensionNames	machine_extension_names	
+gPCUserExtensionNames	    user_extension_names	
+gPCWQLFilter	            wmi_filter	
+whenCreated	                when_created	
+whenChanged	
+
+
+Trusts:
+distinguishedName	        dn	
+trustPartner	            target_domain	
+trustDirection	            trust_direction	
+trustType                 	trust_type	
+trustAttributes	            trust_attributes	
+securityIdentifier       	target_sid	
+flatName	                flat_name	
+whenCreated / whenChanged
+
+
+ACLs:
+distinguishedName	        target_dn
+name	                    target_name
+objectClass	                target_type
+objectSid                 	target_sid
+whenChanged             	modified
+nTSecurityDescriptor	
+sAMAccountName	
+userAccountControl	principal_is_disabled

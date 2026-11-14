@@ -1,0 +1,1 @@
+window.initJavascriptAnalysis = function () {};

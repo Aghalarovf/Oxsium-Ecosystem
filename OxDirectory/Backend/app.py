@@ -38,7 +38,7 @@ from flask import Flask, request
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from config import CORS_ORIGINS, MAX_UPLOAD_BYTES
+from config import CORS_ORIGINS, HOST, MAX_UPLOAD_BYTES, PORT, REDIS_URL
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_BYTES
@@ -56,7 +56,7 @@ limiter = Limiter(
     key_func=get_remote_address,
     app=app,
     default_limits=["200 per minute"],
-    storage_uri=os.getenv("OXDIRECTORY_REDIS_URL", "memory://"),
+    storage_uri=REDIS_URL,
 )
 
 PUBLIC_API_PATHS = {"/api/auth/login", "/api/auth/refresh"}
@@ -94,8 +94,8 @@ if __name__ == "__main__":
     try:
         serve(
             app,
-            host=os.getenv("OXDIRECTORY_HOST", "192.168.0.8"),
-            port=int(os.getenv("OXDIRECTORY_PORT", "6080")),
+            host=HOST,
+            port=PORT,
         )
     except KeyboardInterrupt:
         print("\nOxDirectory server stopped.", file=sys.stderr)

@@ -10,7 +10,7 @@ from flask import Flask, request, g
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from config import CORS_ORIGINS, MAX_BODY_BYTES
+from config import CORS_ORIGINS, HOST, MAX_BODY_BYTES, PORT, REDIS_URL
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = MAX_BODY_BYTES
@@ -28,7 +28,7 @@ limiter = Limiter(
     key_func=get_remote_address,
     app=app,
     default_limits=["10000 per day", "1000 per hour"],
-    storage_uri=os.getenv("REDIS_URL", "memory://"),
+    storage_uri=REDIS_URL,
 )
 
 import store
@@ -69,6 +69,6 @@ if __name__ == "__main__":
 
     serve(
         app,
-        host=os.getenv("OXWEB_HOST", "127.0.0.1"),
-        port=int(os.getenv("OXWEB_PORT", "5100")),
+        host=HOST,
+        port=PORT,
     )

@@ -1,6 +1,0 @@
-{
-  "name_patterns": ["^unknown$", "^n/?a$", "^none$", "^test\\b", "^registrar$", "^redacted"],
-  "iana_ids": [],
-  "missing_is_untrusted": true,
-  "country_code_tld_length": 2
-}

@@ -1,8 +1,0 @@
-mode: target_only
-include:
-  domains: []
-  cidrs: []
-exclude:
-  domains: []
-  cidrs: []
-allow_active: true

@@ -1,5 +1,0 @@
-{
-  "obsolete_types": ["X25", "ISDN", "NSAP", "A6", "GPOS", "WKS", "RT", "MINFO"],
-  "location_types": ["LOC", "GPOS"],
-  "service_listing_types": ["WKS"]
-}

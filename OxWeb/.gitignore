@@ -1,5 +1,0 @@
-.env
-data/
-PyCache/
-__pycache__/
-*.pyc
